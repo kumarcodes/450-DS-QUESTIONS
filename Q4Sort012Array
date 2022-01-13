@@ -1,0 +1,47 @@
+package com.java.rohit;
+
+/******************************************************************************
+
+
+https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s/0
+*******************************************************************************/
+import java.util.*;
+public class Q4Sort012Array
+{
+public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int arr[]=new int[n];
+for(int i=0;i<n;i++) {
+	arr[i]=sc.nextInt();
+}
+int low=0,mid=0,high=0;
+int i;
+for(i=0;i<n;i++) {
+	if(arr[i]==0)
+		low++;
+	else if(arr[i]==1)
+		mid++;
+	else
+		high++;
+}
+i=0;
+while (low > 0) {
+    arr[i++] = 0;
+    low--;
+}
+
+while (mid > 0) {
+    arr[i++] = 1;
+    mid--;
+}
+
+while (high > 0) {
+    arr[i++] = 2;
+    high--;
+}
+for(int j=0;j<n;j++)
+System.out.print(arr[j]);
+
+}
+}
