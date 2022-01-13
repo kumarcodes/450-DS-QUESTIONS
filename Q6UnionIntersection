@@ -1,0 +1,44 @@
+package com.java.rohit;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Q6UnionIntersection {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		int n1=sc.nextInt();
+		int arr1[]=new int[n1];
+		for(int i=0;i<n1;i++) {
+			arr1[i]=sc.nextInt();
+		}
+		HashSet<Integer> hs=new HashSet<Integer>();
+		for(int i=0;i<n;i++) {
+			hs.add(arr[i]);
+		}
+		
+		for(int i=0;i<n1;i++) {
+			hs.add(arr1[i]);
+		}
+		int i = 0, j = 0;
+        while (i < n && j < n1) {
+            if (arr[i] < arr1[j])
+                i++;
+            else if (arr1[j] < arr[i])
+                j++;
+            else {
+                System.out.print(arr1[j++] + " ");
+                i++;
+            }
+        }
+		
+			System.out.println(hs);
+		
+	}
+
+}
